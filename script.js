@@ -11,7 +11,7 @@ document.getElementById('btn').addEventListener('click', function() {
     // Step 1: Create the initial promise that resolves after 2 seconds with the input number
     delay(2000)
         .then(() => {
-            outputDiv.textContent = Result: ${inputValue};
+            outputDiv.textContent = `Result: ${inputValue}`;
             return inputValue; // Pass the input number to the next promise
         })
 
@@ -19,7 +19,7 @@ document.getElementById('btn').addEventListener('click', function() {
         .then(number => {
             return delay(1000).then(() => {
                 const result = number * 2;
-                outputDiv.textContent = Result: ${result};
+                outputDiv.textContent = `Result: ${result}`;
                 return result;
             });
         })
@@ -28,7 +28,7 @@ document.getElementById('btn').addEventListener('click', function() {
         .then(number => {
             return delay(1000).then(() => {
                 const result = number - 3;
-                outputDiv.textContent = Result: ${result};
+                outputDiv.textContent = `Result: ${result}`;
                 return result;
             });
         })
@@ -37,7 +37,7 @@ document.getElementById('btn').addEventListener('click', function() {
         .then(number => {
             return delay(1000).then(() => {
                 const result = number / 2;
-                outputDiv.textContent = Result: ${result};
+                outputDiv.textContent = `Result: ${result}`;
                 return result;
             });
         })
@@ -46,18 +46,18 @@ document.getElementById('btn').addEventListener('click', function() {
         .then(number => {
             return delay(1000).then(() => {
                 const result = number + 10;
-                outputDiv.textContent = Result: ${result};
+                outputDiv.textContent = `Result: ${result}`;
                 return result;
             });
         })
 
         // Step 6: Update the text content of the output div with the final result
         .then(finalResult => {
-            outputDiv.textContent = Final Result: ${finalResult};
+            outputDiv.textContent = `Final Result: ${finalResult}`;
         })
 
         // Handle any errors that occur in the promise chain
         .catch(error => {
-            outputDiv.textContent = Error: ${error};
+            outputDiv.textContent = `Error: ${error}`;
         });
 });
